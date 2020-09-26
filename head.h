@@ -1,9 +1,4 @@
-#define DataType int
-#define InitSize 10 //默认最大长度
-#define MAXSIZE 10
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "common.h"
 
 typedef struct {
     DataType *data;
