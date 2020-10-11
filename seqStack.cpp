@@ -15,6 +15,18 @@ void Init_ShStack(ShStack &shStack){
     shStack.top1 =MAXSIZE;
 }
 
+/**
+ * 判断共享栈是否已满
+ * 共享栈满的条件：top0+1= top1;
+ * */
+bool Full_ShStack(ShStack &shStack){
+    if (shStack.top0+1 == shStack.top1) {
+        return true;
+    } else{
+        return false;
+    }
+}
+
 // 初始化顺序栈
 void Init_Stack(SeqStack &stack) {
     // 初始化栈顶指针

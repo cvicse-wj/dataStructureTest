@@ -27,6 +27,9 @@ typedef struct {
 // 初始化共享栈
 void Init_ShStack(ShStack &shStack);
 
+// 判断共享栈是否已满
+bool Full_ShStack(ShStack &shStack);
+
 // 初始化顺序栈
 void Init_Stack(SeqStack &stack);
 
