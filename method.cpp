@@ -83,3 +83,26 @@ int getIndexByValue(SeqList &pl,int value) {
         }
     }
 }
+
+// 约瑟夫问题
+int josephus_SeqList(SeqList &josephus_seq,int s,int m) {
+    /* 求解约瑟夫问题的出列元素序列入口参数：已经存放数据的顺序把，起始序号s，计数值m */
+    /* 出口参数：1表示后成功，0表示表中没有元素 */
+    int s1,i,w;
+    if (!josephus_seq.length) {
+        printf("表中没有元素！");
+        return 0;
+    }
+    /* data数组中下标是从0开始 */
+    s1 =s-1;
+    printf("输出约瑟夫序列：");
+    for (i = josephus_seq.length; i>0 ; i--) {
+        /* 找到出列元素的下标 */
+        s1=(s1+m-1)%i;
+        w = josephus_seq.data[s1];
+        printf("%d\t",w);
+        /* 调用方法，删除出列元素 */
+        Delete_SeqList(josephus_seq,s1+1);
+    }
+    return 1;
+}
