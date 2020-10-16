@@ -3,13 +3,19 @@
 
 // 顺序表的删除
 
-int main() {
-    LinkList list;
-    List_TailInsert(list);
-    printList(list);//输出
+int Sum_Solution(int n) {
+    n>1 && (n+=Sum_Solution(n-1));
+    return n;
+}
 
+int main() {
+//    LinkList list;
+//    List_TailInsert(list);
+//    printList(list);//输出
+    printf("%d",Sum_Solution(10));
     return 0;
 };
+
 
 
 void test() {
