@@ -38,27 +38,27 @@ bool Push_LinkStack(PLinkStack S,DataType x) {
 }
 
 // 出栈
-bool Pop_LinkStack(PLinkStack S,DataType *x) {
+int Pop_LinkStack(PLinkStack S) {
     PLinkStack p;
     if (Empty_LinkStack(S)) {
         printf("栈空，不能出栈");
         return false;
     }
-    *x = S->top->data;
+    int x = S->top->data;
     p=S->top;
     S->top = p->next;
     free(p);
-    return true;
+    printf("%d\n",x);
+    return x;
 }
 
 // 取栈顶元素
-int GetTop_LinkStack(PLinkStack S,DataType *x){
+int GetTop_LinkStack(PLinkStack S){
     if (Empty_LinkStack(S)) {
         printf("栈空，没有元素");
-        return 0;
-    } else{
-        *x=S->top->data;
         return -1;
+    } else{
+        return S->top->data;
     }
 }
 
@@ -66,7 +66,7 @@ int GetTop_LinkStack(PLinkStack S,DataType *x){
 void Clear_Stack(PLinkStack S){
     int * value;
     if (!Empty_LinkStack(S)) {
-        Pop_LinkStack(S,value);
+        Pop_LinkStack(S);
     }
 }
 

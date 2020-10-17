@@ -26,10 +26,10 @@ bool Empty_LinkStack(PLinkStack S);
 bool Push_LinkStack(PLinkStack S,DataType x);
 
 // 出栈
-bool Pop_LinkStack(PLinkStack S,DataType *x);
+int Pop_LinkStack(PLinkStack S);
 
 // 取栈顶元素
-int GetTop_LinkStack(PLinkStack S,DataType *x);
+int GetTop_LinkStack(PLinkStack S);
 
 // 清空栈
 void Clear_Stack(PLinkStack S);
